@@ -2,6 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -14,27 +17,34 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="p-1 mb-2 mx-24 mt-10">
-          <h1 className="text-5xl text-teal-500 font-semibold">
+        <div className="mx-24 mt-8">
+          <h1 className="text-5xl tracking-wide text-teal-500">
             Mi Casa Su Shasta
           </h1>
-          <p className="text-base mt-12 mb-4">
+          <p className="text-base mt-8 mb-4 underline decoration-teal-500 underline-offset-4">
             4 Bedrooms, 2 Bathrooms, Sleeps 12, Dog & Kid Friendly, Golf Cart
             Included
           </p>
         </div>
 
         <div>
+          <Navbar />
+        </div>
+
+        <div>
           <div className="flex flex-col items-center bg-teal-500">
-            <Image
-              className="rounded"
-              src="/front-wide-low.jpeg"
-              alt="Next.js Logo"
-              width={1920}
-              height={700}
-              priority
-            />
-            <div className="mt-16">
+            <div className="w-screen h-[48rem] relative">
+              <Image
+                src="/front-wide-low.jpeg"
+                alt="Next.js Logo"
+                fill
+                className="object-cover"
+                // width={1920}
+                // height={700}
+                priority
+              />
+            </div>
+            <div className="mt-20">
               <ul className="flex text-white">
                 <li>
                   <div className="p-4 h-full mx-4">
@@ -75,7 +85,7 @@ export default function Home() {
             </div>
             <div className="w-1/2 my-12 text-white">
               <p>
-                Escape to paradise at our tropical oasis! Located right on the
+                Escape to paradise at our tropical oasis! Located right near the
                 beach, this Jimmy Buffett-style Airbnb boasts breathtaking ocean
                 views and a laid-back vibe. Savor the island life with a cold
                 drink in hand, as you relax on the spacious deck or lounge by
@@ -116,6 +126,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
