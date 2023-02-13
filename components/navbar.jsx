@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="bg-yellow-100 px-20">
+    <nav className="mx-auto max-w-6xl">
       <div class="container flex flex-wrap items-center justify-between">
         <button
           data-collapse-toggle="navbar-default"
